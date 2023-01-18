@@ -1,0 +1,25 @@
+\ProvidesPackage{titelseite}[2022 Johann Uhl]
+\def\FARBE{farve}\def\AFDELING{ku}\def\FORSIDE{titelside}
+\ProcessOptions\relax
+
+\renewcommand{\date}[1]{\def\DATUM{#1}}
+\newcommand{\titel}[1]{\def\TITEL{#1}}
+\newcommand{\autor}[1]{\def\AUTOR{#1}}
+\newcommand{\headline}[1]{\def\HEADLINE{#1}}
+\RequirePackage{eso-pic,ifthen}         
+\definecolor{orange}{HTML}{A4001D}
+
+\ifthenelse{\equal{\FORSIDE}{titelside}}{
+\def\tyk{\fontfamily{phv}\fontseries{bx}\selectfont} 
+\def\tynd{\fontfamily{phv}\fontseries{sb}\selectfont}
+\def\maketitle{\thispagestyle{empty}                                                    
+\AddToShipoutPicture*{\put(0,0){\includegraphics*[viewport=0 0 700 600]{ku-farve-komprimiert.pdf}}}
+\AddToShipoutPicture*{\put(0,602){\includegraphics*[viewport=0 600 700 1600]{ku-farve-komprimiert.pdf}}}
+\put(425, 1){\color{orange}\circle*{80}}
+\AddToShipoutPicture*{\put(50,750){\fontsize{14pt}{16pt} \tyk \HEADLINE  }}   
+\AddToShipoutPicture*{\put(50,720){\fontsize{14pt}{16pt} \tyk W-Seminar  }}  
+\AddToShipoutPicture*{\put(50,499){\fontsize{22pt}{24pt} \tynd \TITEL}} 
+\AddToShipoutPicture*{\put(50,470){\fontsize{22pt}{24pt} \tynd und die Transzendenz von \(\pi\)}}
+\AddToShipoutPicture*{\put(50,420){\fontsize{14pt}{16pt} \tynd \AUTOR  }} 
+\AddToShipoutPicture*{\put(50,66.7){\fontsize{11pt}{12pt} \tynd \DATUM   }}                   
+\newpage \noindent}}{}                                                                                    
