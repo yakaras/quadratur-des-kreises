@@ -1,0 +1,28 @@
+\begin{wrapfigure}{l}{0.6\textwidth}
+    \centering
+    \includegraphics[width=0.50\textwidth]{images/geogebra-export.png}
+    \caption{Konstruktion einer Quadratwurzel}\label{sqrt}
+\end{wrapfigure}
+In diesem Kapitel wird ein Beispiel für eine Konstruktion mit Lineal und Zirkel gezeigt und ebenfalls geklärt, wo dabei die Möglichkeiten und Grenzen liegen. Die Möglichkeiten für eine Konstruktion nur mit Lineal und Zirkel in endlichen Schritten ist begrenzt. Dennoch können wir einige algebraische Operationen als Konstruktion durchführen.\footnote{algebraische Operationen: grundlegende mathematische Operationen, z.B.: Addition, Multiplikation}  Zur Veranschaulichung dient hier die Konstruktion einer Quadratwurzel.\newline \par Sei $G$ eine Strecke in einer Ebene, mit dem Punkt $A$. Dieser Punkt sei der Mittelpunkt eines Kreises $K_1$ mit dem Radius $r=1$. Ein Schnittpunkt dieses Kreises mit der Geraden $G$ sei der neue Punkt $B$, der ebenfalls der Mittelpunkt eines neuen Kreises $K_2$ mit dem Radius $r=1$ ist, sodass $\overline{AB}=1$. Die Schnittpunkte $C$ und $D$ der beiden Kreise $K_1$ und $K_2$  sind ebenfalls Punkte auf einer Geraden $I$, welche die Gerade $G$ im Punkt $E$ schneidet, sodass \(\overline{AE}=\overline{EB}=0,5\). In anderen Worten ist $I$ das Lot von $G$ oder $I \perp G$. Die Punkte $E,A$ und $C$ seien nun die Eckpunkte des Dreiecks $\Delta EAC$. Die Längen der zwei Seiten $\overline{AE}$ und $\overline{AC}$ sind gegeben, denn $\overline{AE}=\frac{r}{2}$ und mit $r=1$ ist $\overline{AE}=\frac{1}{2}=0,5$. Die Hypotenuse des Dreiecks ist leicht zu finden, denn $\overline{AC}$ ist genau der Radius $r=1$, sodass $\overline{AC}=1$. Die Seite $x$ ist noch unbekannt. \begin{theorem}
+Die mit Lineal und Zirkel in Abb.\ref{sqrt} konstruierte Strecke und Zahl $x$ ist eine Quadratwurzel. Man kann also Quadratwurzeln konstruieren.
+\end{theorem}
+\begin{proof}
+    Für alle rechtwinkligen Dreiecke gilt\footnote{Satz des Pythagoras}: \begin{equation}\label{eq:pyth}
+        a^2+b^2=c^2
+    \end{equation} Das Dreieck $\Delta EAC$ ist rechtwinklig, mit seinem rechten Winkel bei $E$. Mit $\overline{AC}=c=1$, da $\overline{AC}$ die längste Strecke und somit die Hypotenuse des Dreiecks ist, und $\overline{AE}=b=0,5=\frac{1}{2}$ und $\overline{EC}=a=x$ kann man folgendermaßen die Gleichung (\ref{eq:pyth}) umstellen, um die Strecke $x$ zu berechnen:
+\begin{align*}
+  \begin{split}
+     &a^2+b^2=c^2 \ \ \ \ |-b^2 \\
+     &a^2=c^2-b^2
+  \end{split}
+\end{align*}
+\newpage
+\noindent Mit vorigen Werten:
+\begin{align*}
+  \begin{split}
+     x^2 &=1^2-\left(\frac{1}{2}\right)^2 \\
+     x^2&=1-\frac{1}{4}=\frac{3}{4} \\
+     x&= \sqrt{\frac{3}{4}}=\frac{1}{2}\sqrt{3}=\frac{\sqrt{3}}{2}
+  \end{split}
+\end{align*}
+Wir können hier sehen, dass der mit Lineal und Zirkel konstruierte Wert $x=\sqrt{\frac{3}{4}}$ eine Quadratwurzel ist.\end{proof}
