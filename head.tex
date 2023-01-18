@@ -1,0 +1,71 @@
+\usepackage[ngerman]{babel}
+\usepackage[a4paper, hmargin={3cm, 2.5cm}, vmargin={3cm, 2.5cm}]{geometry}
+\usepackage{tikz,xcolor,pict2e,subcaption,titelseite,amsthm,  wasysym }
+\usepackage[sfdefault]{inter}
+\usepackage{tikz}
+\usepackage{amssymb}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+            \usepackage[tbtags]{amsmath}
+\usepackage{mathtools}  
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{graphicx}
+\graphicspath{./images/} 
+\usepackage{sidecap}
+\usepackage[labelfont=footnotesize, textfont=footnotesize]{caption}
+\usepackage{refcount}
+\usepackage{comment}
+\usepackage{wrapfig}
+\usepackages{setspace}
+\onehalfspace
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newenvironment{simplechar}{%
+   \catcode`\$=12
+   \catcode`\&=12
+   \catcode`\#=12
+   \catcode`\^=12
+   \catcode`\_=12
+   \catcode`\~=12
+   \catcode`\%=12
+}{}
+
+\renewcommand{\sectionmark}[1]{\markright{The Book Title}}
+\newcommand{\EugenBeutelInt}{1}
+\newcommand{\GoogleCloudInt}{14}
+\newcommand{\UniPresentationInt}{13}
+\newcommand{\WieleitnerInt}{11}
+\newcommand{\MillaInt}{8}
+\newcommand{\MohrInt}{9}
+\newcommand{\BabineczInt}{2}
+\newcommand{\ActaInt}{4}
+\newcommand{\FritschInt}{3}
+\newcommand{\PiUlm}{12}
+\newcommand{\AnnalenInt}{7}
+\newcommand{\MoserInt}{10}
+\newcommand{\AlgebraInt}{5}
+\newcommand{\HobsonInt}{6}
+
+\newcommand{\ratio}{\glqq \textsl{ratio}\grqq{}}
+
+\newtheorem{definition}{Definition}[section]
+
+
+\fancyhf{}
+\fancyhead[LE]{\makebox[1.5em][l]{\thepage}}
+\fancyhead[RO]{\makebox[1.5em][r]{\thepage}}                                                                                                                    
+
+
+ \renewcommand{\familydefault}{\sfdefault}
+ 
+\titel{Quadratur des Kreises}
+\autor{Johann Uhl} 
+\date{2022}
+\headline{Hans-Carossa-Gymnasium}
