@@ -1,0 +1,237 @@
+\documentclass[11pt]{article}
+\input{head.tex}
+
+\begin{document}
+\maketitle
+
+\newpage
+\tableofcontents
+\newpage
+\section{Allgemeine Darstellung des Problems der\\ Quadratur des Kreises}
+\input{intro.tex}
+\input{problem.tex}
+\newpage
+\section{Geschichtliche Abhandlungen über $\pi$ \\und ein Beispiel einer Quadratur}
+\onehalfspace
+Im Verlaufe der Zeit, in der Menschen mit Mathematik experimentiert haben, gab es immer wieder Versuche, die Kreiszahl \(\pi\) grafisch darzustellen. Manche dieser grafischen Darstellungen dienen zur Berechnung neuer Nachkommastellen von $\pi$, andere haben indirekt mit der Konstruktion von $\pi$ zu tun\footnote{Wie unser Problem der Quadratur des Kreises}, wieder andere werden nur zur Veranschaulichung der Kreiszahl benutzt.\newline \begin{wrapfigure}{r}{0.3 \textwidth}\centering\includegraphics[width=0.30\textwidth]{images/polygon.png}\caption{Polygonnäherung Archimedes}\label{archimed:approx}\end{wrapfigure}\par Ein Beispiel für eine grafische Darstellung für $\pi$ und die Berechnung von Nachkommastellen ist die von Archimedes aufgestellte Polygonnäherung. So hat Archimedes 41gKFtogHYuTLgtmff2zbx9hk7DWS8VB612gDjf1YFPsfT66jV4UFCBNJSsUKKBpwf9y4CunA1UoucxSkm8NLtmRFxDFATcobere und untere Grenze von \(\pi\) herausfinden können:\footnote{Er war nicht der erste, der diese Werte herausgefunden hat, aber seine Methode ist wohl die bekannteste}
+\[3 \frac{10}{71}<\pi<3 \frac{1}{7}\]
+Der Wert \(3 \frac{1}{7}\approx3,1429\) scheint im Vergleich zu jetzigen Fortschritten, bei denen 100 Billionen Stellen von \(\pi\) gefunden wurden\footnote{E. Iwao in Google Cloud, A bigger piece of the pi: Finding the 100-trillionth digit [\GoogleCloudInt]} sehr ungenau zu sein, doch für die damaligen Zeiten war dieser Wert schon recht fortschrittlich und wurde sogar noch lange Zeit seiner Einfachheit halber benutzt. Archimedes hat diese obere und untere Grenze durch seine Polygonnäherung berechnet.
+
+Er hat hierfür einen Einheitskreis gezeichnet, und um diesen zwei Polygone. Das eine außerhalb des Kreises, das den Kreis immer wieder von außen berührt und eines innerhalb, das den Kreis immer wieder von innen berührt. So konnte er für außerhalb (in Abb. \ref{archimed:approx} grün) und innerhalb (in Abb. \ref{archimed:approx} rot), eine Fläche berechnen, die annäherungsweise der Fläche des Kreises ähnelt. Bei größer werdender Anzahl von Ecken der Polygone nähern sich die beiden Polygone immer mehr dem Kreis an, somit wird die Fläche der Polygone immer mehr der Fläche des Kreises ähneln, wodurch auch die dann kalkulierte Obergrenze – aus dem außerhalb liegenden Polygon – und die untere Grenze – aus dem innerhalb liegenden Polygon – von \(\pi\) immer genauer wird. \par
+\begin{wrapfigure}{l}{0.3 \textwidth}
+    \centering
+    \includegraphics[width=0.30\textwidth]{images/moons_hippo.png}
+    \caption{Möndchen des Hippokrates}\label{archimed:approx}
+\end{wrapfigure}
+\newpage Hippokrates von Chios lebte in der zweiten Hälfte des 5. Jhd. v. Chr. und schrieb das erste Lehrbuch über Geometrie. In diesem hat er auch als erster Beispiele beschrieben, die eine exakte Quadratur zulassen.\footnote{E. Hobson, Squaring of the circle, S.15f. [\HobsonInt]} Die in Abb.2 dargestellten \glqq Möndchen\grqq{} haben jeweils den gleichen Flächeninhalt wie die dazugehörige\footnote{gleiche Schraffierung} Dreiecksfläche. Beide Dreiecksflächen zusammengenommen sind ein Quadrat, das genau so groß ist, wie die Fläche der beiden \glqq Möndchen\grqq{} zusammengenommen. Also \[\Delta ABD = \leftmoon AD + \leftmoon BD\] Nun sind die beiden \glqq Möndchen\grqq{} kein Kreis, dennoch ist dieses Beispiel das erste seiner Art, das sich mit einer Quadratur von krummlinigen Flächen beschäftigt, was nicht all zu fern von einem Kreis steht. Doch bevor wir uns unserem Problem widmen und die Quadratur des Kreises versuchen, werden wir erst deren Unmöglichkeit beweisen.
+\clearpage\newpage
+\section{Unlösbarkeit der Quadratur des Kreises}
+In diesem Kapitel wird die Unlösbarkeit unseres Problems erklärt und bewiesen. Wenn wir in der Mathematik von bestimmten Zahlen sprechen, müssen wir uns erst einen Überblick über diese verschaffen.
+\subsection{Über algebraische und transzendente Zahlen}
+Betrachten wir die uns bekannten Zahlenmengen, so können wir feststellen, dass sich Zahlen in rationale und irrationale Zahlen einteilen lassen. Rationale Zahlen umfassen alle positiven und negativen ganze Zahlen sowie Brüche. Sie sind Zahlen, die wir mit Hilfe von Addition, Subtraktion, Multiplikation und Division erhalten.\footnote{E. Beutel, Die Quadratur des Kreises, S.5 [\EugenBeutelInt]} Die irrationalen Zahlen hingegen setzen sich aus algebraischen und transzendenten Zahlen zusammen. Doch zunächst: Was sind irrationale Zahlen? Eine Eigenschaft ist beispielsweise ihre Unendlichkeit hinter dem Komma. Jedoch gibt es auch rationale Zahlen, die unendlich viele Nachkommastellen besitzen. Die Rede ist hier von den Brüchen, die in ihrer Dezimalbruchschreibweise Perioden aufweisen, also sich wiederholende Zahlenreihen, wie z.B. \[\mathrm{\frac{1}{37}=0,\overline{027}=0,027^\cdot027^\cdot027....}\]In diesem Beispiel würde sich die Zahlenfolge \(027\) nach dem Komma ins Unendliche wiederholen.\footnote{\label{note1}H.Wieleitner, Der Begriff der Zahl, §4 S.26ff. [\WieleitnerInt]} \par Soll es neben den rationalen Zahlen noch andere Zahlen mit unendlich vielen Nachkommastellen geben, so müssen irrationale Zahlen also Zahlen sein, die sich nicht auf endliche Weise mit ganzen Zahlen mit Hilfe den bekannten vier Rechenoperationen darstellen lassen. Wie aus dem lateinischen Wort \ratio, was man mit \glqq \textsl{Verhältnis}\grqq{} übersetzen kann, hervorgeht, kann man \glqq \textsl{irrationale}\grqq{} Zahlen nicht mit einem Verhältnis zweier ganzen Zahlen, also nicht mit einem Quotienten darstellen. Auf die wohl bekannteste irrationale Zahl stößt man, wenn man nach einer Lösung der Gleichung \(x^2=2\) sucht. Wir alle wissen, dass die Lösung dieser Gleichung $x=\sqrt{2}$ ist. Dieser Ausdruck ist nur eine Schreibweise für eine Zahl, die im Quadrat $2$ ergeben soll, und repräsentiert nicht wirklich eine Zahl. Auch wenn wir diese Zahl, die im Quadrat $2$ ergibt, nicht vollständig ausschreiben können, ist es dennoch sicher, dass es sie gibt. Und mehr noch, sie löst sogar einen bestimmten Typ von Gleichungen, die im Folgenden dargestellt werden. \\
+
+Folgende Definition wurde von Fritsch\footnote{R.Fritsch, Transzendenz von e im Leistungskurs?, S.1 [\FritschInt]} in seinem Vortrag als Einstieg verwendet:
+\begin{definition}\label{def_alge}
+    Eine reelle Zahl $x$ ist \textbf{algebraisch}, wenn es eine natürliche Zahl $n \in \N$, $n >0$ und ganze Zahlen $a_0,a_1,\dots,a_n \in \Z$ mit $a_n\neq0$ gibt, so dass gilt:
+    \begin{equation}\label{polynomial}
+        a_nx^n+a_{n-1}x^{n-1}+\dots+a_2x^2+a_1x+a_0=0
+    \end{equation}
+    das heißt, wenn $x$ eine algebraische Zahl sein soll, dann muss $x$ eine Nullstelle der Funktion aus (\ref{polynomial}) sein, wobei sie eine Funktion mit positivem Grad\footnote{Größter Exponent eines Polynoms, z.B. bei $f(x)=x^3+7x^2+4$ ist der Grad $3$} $n$ ist.
+\end{definition}
+
+Diese Definition soll noch verständlicher erläutert werden. Die Funktion aus (\ref{polynomial}) besteht aus Summanden der Form $a_nx^n$, also aus einem Koeffizienten und der Variable $x$. $x$ ist an jeder Stelle der Funktion logischerweise gleich, da nur ein $x$-Wert eingesetzt wird, aber die Koeffizienten $a_0,\dots,a_n$ können variieren. Dabei müssen nicht alle Summanden größer als null sein und somit keine Auswirkung auf die Gleichung haben. Ist beispielsweise der Koeffizient $a_5$ null, so ist der ganze Summand $a_5x^5$ null. Die einfachste und anschaulichste Funktion in der Form aus (\ref{polynomial}) ist $x^2$. Der Grad $n$ ist hier $2$. Um auf diese Funktion zu kommen, setzen wir einige Werte in die Funktion aus (\ref{polynomial}) ein: \begin{align*}
+    \begin{split}
+        f(x) &=a_2x^2+a_1x+a_0
+    \end{split}
+\end{align*}
+Mit $a_2=1,a_1=0$ und $a_0=0$:
+\begin{align*}
+    \begin{split}
+        f(x) &=1x^2+0x+0 \\
+        &= x^2
+    \end{split}
+\end{align*}
+Da $a_0,\dots,a_{n-1}$ alle denkbaren ganzen Zahlen sein können, lassen sich auch die oben genannten Werte dafür einsetzen. Damit haben wir gezeigt, dass $f(x)=x^2$ eine Funktion des Typs (\ref{polynomial}) ist. Finden wir nun eine Lösung für die Gleichung (\ref{polynomial}) für $x^2$, wissen wir nach Definition \ref{def_alge}, dass der $x$-Wert, der die Gleichung löst, algebraisch ist. Das ist jedoch nicht genug, um die Gleichung (\ref{polynomial}) vollständig verstehen zu können, denn die Lösung für die Gleichung \(x^2=0\) ist $x=0$. Hiermit ist bewiesen, dass $0$ algebraisch ist, was noch nicht kompliziert ist. Betrachten wir deshalb eine etwas komplexere polynomiale\footnote{Eine Gleichung in der Form (\ref{polynomial})} Gleichung: Es sei der Grad eines Polynoms $n=3$, die verschiedenen Koeffizienten $a_3=4, a_2=-5, a_1=-6$ und $a_0=7$. Wir erhalten folgende Gleichung: \begin{align}\label{polynomial2}
+    \begin{split}
+        &a_3x^3+a_{3-1}x^{3-1}+a_{1}x^{1}+a_0 = 0 \\
+        &a_3x^3+a_{2}x^{2}+a_{1}x^{1}+a_0 = 0 \\
+        &4x^3-5x^2-6x+7 = 0 
+    \end{split}
+\end{align}
+\begin{definition}\label{trans_def}
+    Eine reelle Zahl $x \in \R$, die nicht algebraisch ist, heißt \textbf{transzendent}.\footnote{\label{note2}J.Zoller, Die transzendente Zahl Pi, S.37ff.}
+\end{definition}
+Das heißt, kann eine Zahl $x$ eine Gleichung der Form (\ref{polynomial}) nicht lösen, ist sie eine transzendente Zahl. Im Folgenden beweisen wir, dass jede transzendente Zahl eine irrationale Zahl ist.
+\begin{theorem}\label{irrational}
+    Jede transzendente Zahl ist irrational.
+\end{theorem}
+\begin{proof}
+    Wir führen einen Widerspruchsbeweis nach Zoller:\(^\ref{note2}\) \newline\newline
+    \textit{Widerspruchsannahme. }
+    Sei $x\in\R$ eine transzendente Zahl. Angenommen, $x$ wäre rational. Per Definition der rationalen Zahlen gibt es $x$ entsprechende $p\in\Z$ und $q\in\N$ mit $x=\frac{p}{q}$. $x$ kann nun aber die Gleichung \begin{align}\label{rational_eq}
+        qx+(-p)=0
+    \end{align} erfüllen und ist somit eine algebraische Zahl\footnote{Die Gleichung qx+(-p)=0 ist auch eine polynomiale Gleichung nach der Form von (\ref{polynomial}). Mit $n=1, a_1=q$ und $a_0=-p$}, was einen Widerspruch zur Transzendenz darstellt. Somit muss $x$ irrational sein.
+\end{proof}
+\newpage
+
+\subsection{Möglichkeiten einer Konstruktion mit Lineal und Zirkel}
+\input{konstruktion_mit_lineal_und_zirkel.tex}
+Die eben durchgeführte und bewiesene Konstruktion einer Quadratwurzel ist aber nicht die einzige Operation, die mit Lineal und Zirkel durchgeführt werden kann. Dennoch sind die Möglichkeiten von Operationen mit algebraischen Zahlen begrenzt, was im Folgekapitel genauer erläutert wird.
+\subsection{Die abgeschlossene Menge der algebraischen Zahlen}
+In diesem Kapitel wird bewiesen, dass die Menge der algebraischen Zahlen unter Addition, Subtraktion, Multiplikation, Division und das Ziehen von Quadratwurzeln abgeschlossen ist. In anderen Worten, wenn man von algebraischen Zahlen ausgeht, kann man nur die gerade genannten Operationen durchführen. \par
+Der Beweis folgt der Beweisführung von Lorenz Milla\footnote{\label{MillaFootnote}L. Milla, Die Transzendenz von $\pi$ und die Quadratur des Kreisesm S. 25-29. [\MillaInt]} und verwendet nur grundlegende Algebra. Die Beweisführung der folgenden Lemmata wird ausgelassen, um diese Arbeit nicht überzustrapazieren.
+
+
+\begin{lemma}\label{addi_alge}
+    Wenn \(a\) und \(b\) algebraisch sind, dann ist auch  \(a + b\) algebraisch. 
+\end{lemma}
+\begin{lemma}\label{multi_alge}
+    Wennn \(a\) und \(b\) algebraisch sind, dann ist auch \(a \cdot b\) algebraisch.
+\end{lemma}
+\begin{lemma}
+    Wennn \(a\) algebraisch ist, dann ist auch \(-a,\sqrt{a}\) und $\frac{1}{a}$ algebraisch.
+\end{lemma} Durch obige Lemmata wird die Abgeschlossenheit\footnote{Beliebige Zahlen aus einer abgeschlossenen Menge ergeben mit Operationen, unter denen die Menge abgeschlossen ist, wieder Zahlen aus dieser Menge.} der algebraischen Zahlen bezüglich der Addition, Subtraktion, Multiplikation, Division und das Ziehen von Quadratwurzeln bewiesen.\newline
+\begin{theorem}\label{konstruierbare_punkte}
+    Konstruierbare Punkte sind algebraisch.
+\end{theorem}Man kann mit Zirkel und Lineal Kreise und Geraden zeichnen, sowie ihre Schnittpunkte bilden. Es können folgende \glqq Fälle\grqq{} auftreten:$^\text{\ref{MillaFootnote}}$ \begin{itemize}
+     \item Eine Gerade verläuft durch zwei Punkte $P$ und $Q$
+     \item Ein Kreis mit dem Radius $r=\overline{PQ}$, mit den Punkten $P$ als Mittelpunkt und $Q$ als Kreislinienpunkt
+     \item Zwei Geraden Schneiden sich im Punkt $P$
+     \item Ein Kreis schneidet eine Gerade in den Punkten $P_n, P_m$
+     \item Zwei Kreise schneiden sich in den Punkten $P_n, P_m$
+ \end{itemize}
+ Dass alle Punkte, die in den oben genannten Fällen entstehen, algebraisch sind, wird vorausgesetzt, da es für diese Arbeit zu weit greifen würde, die Zugehörigkeit der Punkte zur algebraische Menge zu beweisen.
+Dennoch wird im Folgenden ein Fall gezeigt und bewiesen.$^\text{\ref{MillaFootnote}}$
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.17\textwidth]{images/Gerade.png}
+    \caption{Gerade verläuft durch zwei Punkte}
+    \label{fig:my_label}
+\end{figure}
+    \begin{lemma}
+        Sind zwei Punkte $P(x_1|y_1)$ und $Q(x_2|y_2)$ algebraische Punkte, so kann die Gerade, die durch $P$ und $Q$ verläuft durch eine Gleichung $a\cdot x + b\cdot y=c$ beschreiben, wobei die Koeffizienten $a, b$ und $c$ algebraisch sind.
+    \end{lemma}
+      
+    \begin{proof}  
+    Eine Gerade die durch die Punkte $P(x_1|y_1)$ und $Q(x_2|y_2)$ läuft, kann als Vektor mit $\begin{pmatrix}y_1-y_2 \\ x_1-x_2\end{pmatrix}$ beschrieben werden. Oder als Geichung: \[a\cdot x+b\cdot y =c\] mit $a=y_1-y_2, b=x_2-x_1$: \[x_2y_1-x_1y_2=c\] Da $x_{1;2}$ und $y_{1;2}$ algebraisch sind folgt nach Lemma \ref{addi_alge}. und Lemma \ref{multi_alge}., dass $a, b$ und $c$ ebenfalls algebraisch sind.\end{proof} Soll also ein Punkt $x$ konstruierbar sein, so muss $x$ in der Menge der algebraischen Zahlen vorhanden sein. Jeder neue konstruierte Punkt $x$ benötigt bereits konstruierte Punkte, die der algebraischen Menge angehören. Nach Theorem \ref{konstruierbare_punkte}. ist dieser neue Punkt ebenfalls algebraisch.
+
+
+\subsection{Transzedenz von $\pi$}
+Dass $\pi$ transzendent ist, hat Ferdinand von Lindemann in der wissenschaftlichen Zeitschrift \glqq \textsl{Mathematische Annalen, Band 20}\grqq{}\footnote{F. Lindemann in K. Felix, Mathematische Annalen, Band 20 [\AnnalenInt]} im Jahr 1882 bewiesen. Sein Beweis wurde vereinfacht von Hilbert$^{\text{\ref{MillaFootnote}}}$. Da aber selbst der vollständige, vereinfachte Beweis Hilberts viele Vorraussetzungen fordert und somit etwas komplex ist, würde er in dieser Arbeit zu weit führen. Dennoch wird nun im Folgenden versucht, den Beweis anschaulich zu beschreiben, wobei die Darstellung von Moser\footnote{\label{Moser1}L. Moser, Die Transzendenz der Zahlen $e$ und $\pi$ nach
+Hilbert, S.3 [\MoserInt]
+} gewählt wurde:
+\begin{theorem}\label{transzendenz}
+    Die Kreiszahl $\pi$ ist transzendent
+\end{theorem}
+\begin{proof}
+     Wir führen einen sehr einfachen, kurz gehaltenen Widerspruchsbeweis. Doch als erstes verschaffen wir uns einen Blick auf eine allgemein gültige Definition:
+    \begin{definition}
+        Folgende Gleichung wird auch als Eulerschen Identität bezeichnet: \[1+e^{i\cdot\pi}=0\]
+    \end{definition}
+    \begin{definition}[Satz von Hilbert$^{\text{\ref{Moser1}}}$]
+        Wenn $P\in \Z$ ein ganzzahliges Polynom vom Grad $n$ mit Nullstellen $s_1,\dots,s_n \in\C$ ist, dann gilt für alle natürlichen Zahlen $a\geq1:$ \[a+e^{s_1}+\dots+e^{s_n}\neq 0\]
+    \end{definition}
+    Nehmen wir an $\pi$ sei algebraisch. Dann ist nach Lemma \ref{multi_alge}. auch $\pi i$ algebraisch\footnote{Die Zahl $i$ ist ebenfalls algebraisch}. Nach Definition \ref{def_alge}. gibt es ein Polynom $P$ der Form $a_nx^n+\dots+a_2x^2+a_1x+a_0$ mit den Nullstellen $\omega_1,\dots,\omega_n$, wobei eine Nullstelle $i\pi$ ist.\footnote{Da wir annehmen, $i\pi$ sei algebraisch, erfüllt es eine Gleichung der Form (\ref{polynomial}), also ist es eine Nullstelle dieser Gleichung.} Wollen wir nun ein Produkt bilden, dessen Faktoren in der Form $1+e^{\omega_n}$ sind. Also ist die Anzahl der einzelnen Faktoren gleich des Grades $n$ des Polynoms $P$. In Produktschreibweise: 
+    \[\prod_{i=1}^{n} (1+e^{\omega_n})\] 
+    Mit der Eulerschen Identität $e^{i\pi}=-1$ folgt, dass ein Faktor des Produkts Null ergibt, da $e^{i\pi}+1=0$ und ein $\omega_m=i\pi$, sodass das ganze Produkt Null ergeben würde. Mit Ausmultiplizieren lautet das Produkt also: \begin{equation}\label{product_1}
+        \prod_{i=1}^{n} (1+e^{\omega_n}) =0=1+e^{\omega_1}+\dots+e^{\omega_n}
+    \end{equation}                                            
+    Aus weiteren mathematischen Lemmata und Sätzen, die wir hier zur Vereinfachung weglassen, folgt, dass wir in obigem Fall den Satz von Hilbert auf $P$ anwenden können und erhalten somit: \[1+e^{s_1}+\dots+e^{s_n}\neq 0\] Da das im Widerspruch zur Gleichung (\ref{product_1}) steht, können wir sagen, dass $\pi$ nicht algebraisch sein kann und somit nach Definition \ref{trans_def} transzendent sein muss. Es gibt also kein Polynom $P$ der Form (\ref{polynomial}), das $\pi$ als eine seiner Nullstellen besitzt. 
+\end{proof}
+Wenden wir Theorem \ref{irrational}. an, können wir ebenfalls folgern: Die Zahl $\pi$ ist irrational. \newline\newline
+Doch was bedeuten die gesammelten Erkenntnisse nun für die Quadratur des Kreises? Wie wir schon geklärt haben, ist die Quadratur des Kreises nichts anderes als eine Konstruktion der Zahl $\pi$. Denn mit $r=1$ hat ein Kreis die Fläche $\pi$ und dessen flächeninhaltsgleiches Quadrat hat ebenfalls die Fläche $\pi$ und die Seitenlängen $\sqrt{\pi}$. Wenn es eine Konstruktion von $\pi$ bzw. $\sqrt{\pi}$ geben soll, so müsste $\pi$ bzw. $\sqrt{\pi}$ nach Theorem \ref{konstruierbare_punkte}. algebraisch sein. Wir haben aber in Theorem \ref{transzendenz}. bewiesen , dass $\pi$ transzendent ist, somit ist die Konstruktion von $\pi$ als Fläche oder als Strecke mit $\sqrt{\pi}$ unmöglich. Auf die Quadratur des Kreises bezogen ist diese selbst als logische Schlussfolgerung ebenfalls unmöglich.
+\clearpage
+\section{Näherungskonstruktionen}
+Obwohl die exakte Kreisquadratur unmöglich ist, wie wir im vorigen Kapitel bewiesen haben, gibt es dennoch ziemlich genaue Näherungskonstruktionen, die dem eigentlichen Wert sehr ähnlich sind. Schon vor dem Beweis der Transzendenz von \(\pi\) erschienen Näherungskonstruktionen der Quadratur des Kreises in vielen Formen, da man schon lange die Unmöglichkeit vermutet hatte. Beispiele dafür sind:
+\begin{itemize}
+  \item Adam Kochanski\footnote{\label{MohrFootnote}R. Mohr, Die transzendente Zahl \(\pi\); normal?, S.2f. [\MohrInt]}, 1685
+  \item Jacob de Gelder\footnote{E. Hobson, Squaring the circle, S.34 [\HobsonInt]}, 1849 
+  \item Ernest Hobson$^\text{\ref{MohrFootnote}}$, 1913
+\end{itemize}
+\subsection{Näherungskonstruktion von Kochanski}\label{kochanski_section}
+Die älteste sowie eine der genauesten\footnotemark und dabei recht einfach gehaltene Konstruktionen ist die von Adam Kochanski. Im Folgenden wird zur Veranschaulichung des Problems der Quadratur des Kreises die Konstruktion exemplarisch Schritt für Schritt durchgeführt und genauer erläutert. Hierfür werden Ausführungen aus den Arbeiten von Eugen Beutel\footnotemark[\value{footnote}] \footnotetext{E. Beutel, Die Quadratur des Kreises, S.58 [\EugenBeutelInt]}, Wolfram Babinecz\footnote{W. Babinecz, Rund um Kreis und Kugel, S.11f. [\BabineczInt]}, Richard Mohr\footnote{M. Richard, Die transzendente Zahl \(\pi\); normal?, S.2 [\MohrInt]} und der aus Zeitschrift Acta Eruditorum\footnote{J. Grosse, Acta Eruditorum 1685, S.397f. [\ActaInt]} verwendet: \newline\newline
+
+
+    
+
+\sidecaptionvpos{figure}{c}
+\begin{SCfigure}[50][!h]
+ \centering
+\caption*{\normalsize Man startet damit, einen Kreis $K$ mit Radius \(\LARGE r=1\)  um den Mittelpunkt $M$
+zu zeichnen.}\includegraphics[width=0.2\textwidth]{images/kochanski1.png}
+\end{SCfigure}
+\begin{SCfigure}[50][!h]
+ \centering
+\caption*{\normalsize Anschließend zeichnet man die zwei senkrecht aufeinander stehendenden Kreisdurchmesser, die die Kreislinie in den Punkten $A$, $B$ und $C$ schneiden.}
+\includegraphics[width=0.2\textwidth]{images/kochanski2.png}
+\end{SCfigure}
+\begin{SCfigure}[50][!h]
+ \centering
+\caption*{\normalsize Punkt $Y$ entsteht, wenn man vom Punkt $B$ den Radius \(r\) auf der Kreislinie abträgt. Ebenfalls zeichnet man die durch $C$ verlaufende Kreistangente.}
+\includegraphics[ width=0.35\textwidth]{images/kochanski3.png}
+\end{SCfigure}
+\begin{SCfigure}[50][!h]
+ \centering
+\caption*{\normalsize Verlängert man die Strecke \(\overline{MY}\), so erhält man den Schnittpunkt mit der Kreislinie $X$. Trägt man hiervon den Radius \(r\) drei mal auf der Kreistangente ab, erhält man somit den Punkt $Z$. Also \(\overline{XZ}=3\cdotr\).}
+\includegraphics[ width=0.35\textwidth]{images/kochanski4.png}                      
+\end{SCfigure}
+\begin{SCfigure}[50][!htb]
+ \centering
+\caption*{\normalsize Die Strecke \(\overline{AZ}\) ist eine sehr gute Näherung für den halben Kreisumfang bzw. für das Produkt \(r\cdot\pi\). Mit \(r=1\) beträgt diese Strecke einen guten Näherungswert für \(\pi\).}
+\includegraphics[ width=0.35\textwidth]{images/kochanski5.png}
+\end{SCfigure}
+
+\clearpage
+%Für die Quadratur des Kreises gilt nun also:\footnote{W. Babinecz, Rund um Kreis und Kugel, S.12 [\BabineczInt]} 
+\begin{figure}
+
+    \includegraphics[ width=0.8\textwidth]{images/kochanski6.png}
+    \caption{Quadratur des Kreises, Näherungskonstruktion von Kochanki}\label{qudr_circ}
+    \newline\end{figure}
+    \normalsize Mit Radius \(r=1\) und \(\overline{AZ}=\pi\) hat das rote Rechteck den Flächeninhalt \(\pi\). Die Umformung eines Rechtecks in ein flächeninhaltsgleiches Quadrat, das wir in unserem Problem suchen, ist im Vergleich zu den vorherigen Schritten ein leichtes.
+
+Wir haben nun in ein paar wenigen, nicht allzu schweren Schritten ein Quadrat erschaffen, das dem 
+Flächeninhalt des Kreises schon sehr nahe kommt. Wie bereits erwähnt, kommt der konstruierte Wert für 
+\(\pi\) dem echten Wert nur nahe. Wollen wir also den Fehler, die diese Konstruktion aufwirft, ausrechnen, 
+müssen wir den konstruierten Wert für \(\pi\) bzw. die Strecke \(\overline{AZ}\) berechnen. Da 
+\(\overline{AZ}\) die Hypotenuse des rechtwinkligen Dreiecks \(\Delta ACZ\) ist, können 
+wir hierfür ganz einfach den Satz des Pythagoras $a^2 + b^2 = c^2$ anwenden. Die Strecke 
+\(\overline{CZ}\) müssen wir noch zusätzlich berechnen, indem wir \(\overline{CZ}\) mit 
+\(\overline{XC}\) subtrahieren. \(\overline{XC}\) erhalten wir durch den Tangens des 
+Winkels \(\alpha\) zwischen der Strecke \(\overline{CZ}\) und des Kreisdurchmessers 
+\(\overline{MC}\).   Mit \[a=\overline{AC}=2\cdot r=2\] und \(\alpha = 30^{\circ}\) können wir eine 
+Formel für \(\overline{AZ}\) aufstellen\footnote{W. Babinecz, Rund um Kreis und Kugel, S.11f. 
+[\BabineczInt]} : \[\overline{AZ}=\sqrt{\left[(3\cdot r)-\tan{30^{\circ}}\right]^2+2^2}\] Mit \(r=1\)
+lautet diese Formel: 
+\[
+\overline{AZ}=\sqrt{(3-\tan{30^{\circ}})^2+4}\approx \pi \approx 3.141533...
+\]
+ Wir sehen hier, dass der Fehler im konstruierten Wert für \(\overline{AZ}\) erst nach der fünften Nachkommastelle auftritt. In Zahlen heißt das, der Näherungswert für \(\pi\) beträgt \(99.99811\%\) des tatsächlichen Werts von \(\pi \approx 3.14159265359\). Noch anschaulicher wäre: erst ab einem Radius von 16,86 Metern beträgt der Fehler der Strecke \(\overline{AZ}\) mehr als einen Millimeter, wenn man von \(\pi\) als Richtwert ausgeht. Den Beweis, dass wir den halben Kreisumfang in eine Strecke verwandelt haben, lassen wir an dieser Stelle weg, da es für diese Arbeit zu tief greifen würde. Es gibt natürlich viele weitere, genauere Näherungskonstruktionen als die hier beschriebene Konstruktion von Adam Kochanski.\par
+ \newpage
+ \subsection{Konstruktion von Jacob de Gelder}
+ Wie bereits erwähnt, gibt es viele andere Konstruktionen, die der Quadratur des Kreises sehr nahe kommen. Zur weiteren Veranschaulichung werden noch zwei weitere Beispiele für Konstruktionen gezeigt, die aber nicht so genau erläutert werden wie die von Kochanski. 
+\begin{wrapfigure}{l}{0.5\textwidth}
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{images/gelder.png}
+  \end{center}
+  \caption{Näherungskonstruktion von Jacob de Gelder}
+\end{wrapfigure}
+Die nebenstehende Abbildung 6 stammt von Jacob de Gelder aus dem Jahr 1849 und ist in Grünerts Archiv erschienen\footnote{E. Hobson, Squaring the circle, S.34 [\HobsonInt]}. Wie zu erkennen ist, ist diese Konstruktion ebenfalls recht einfach gehalten. Er bedient sich hier dem Näherungswert von $\pi$ \[\pi\approx\frac{355}{113}=3+\frac{4^2}{7^2+8^2}=3,141592\dots\] Da sich der Wert $3+\frac{4^2}{7^2+8^2}$ nur aus algebraischen Zahlen und algebraischen Operationen zusammensetzt, lässt er sich auch konstruieren. Gelders Konstruktion ist genau diese eine Konstruktion des sich an $\pi$ annähernden Wertes. Mit $r=\overline{CD}=1$ ist der Wert der Strecke $\overline{AH}=\frac{4^2}{7^2+8^2}$. Da $\overline{AH}$ also $0,141592\dots$ ist, kann man vom Punkt $A$ den Radius $1$ drei mal abtragen, um eine wieder eine Strecke $\overline{AZ}$ zu erhalten, wie es bei der Kochanski-Konstruktion der Fall war. Von dieser Strecke ausgehend, die annähernd $\pi$ ist, können wir genau wie in der Konstruktion von Kochanski ein Quadrat mit einem sich $\pi$ ähnelnden Flächeninhalt konstruieren. Der Fehler tritt hierbei erst nach der sechsten Nachkommastelle von $\pi$ auf und ist somit noch genauer als die Konstruktion Kochanskis.
+\clearpage\newpage
+ \section{Fazit}
+ Wir haben uns in dieser Arbeit einen groben Überblick über das Problem der Quadratur des Kreises verschafft. Zwar ist die Quadratur des Kreises bewiesenermaßen unmöglich, da sich die Kreiszahl $\pi$ in keiner Form von geometrischen Figuren konstruieren lässt, dennoch gibt es Näherungen, die mit Lineal und Zirkel eine möglichst genaue Konstruktion der Quadratur des Kreises erlauben. \par
+Rufen wir uns die Frage nochmal in den Sinn, ob der Vergleich eines Problems wie das von Andreas Heller, eine stabile Mehrheit im Kreistag zu etablieren, mit der Quadratur des Kreises angemessen ist. Die Kreisquadratur ist zwar nicht exakt, aber mit sehr guter Näherung möglich. So gibt es auf der Welt keinen einzigen Spitzer, der einen Bleistift so spitzen könnte, dass der Fehler der besten Näherungskonstruktionen überhaupt erkennbar wäre. Wenn Andreas Heller also nur einen Bruchteil dieser Genauigkeit auf eine stabile Mehrheit im Kreistag übertragen könnte, wäre dieser sehr stabil. \par Die Quadratur des Kreises ist zwar unmöglich, kann aber dennoch mit sehr genauen Näherungskonstruktionen konstruiert werden. Deshalb müsste bei der Verwendung der Redewendung \glqq \textit{Die Quadratur des Kreises versuchen}\grqq{} der Sachzusammenhang berücksichtigt werden.
+\clearpage\newpage
+
+\section{Literaturverzeichnis und Bildnachweis}
+\input{literatur_verzeichnis.tex}\newpage
+\section{Eidesstattliche Erklärung}
+\glqq Ich habe diese Seminararbeit ohne fremde Hilfe angefertigt und nur die im 
+Literaturverzeichnis angeführten Quellen und Hilfsmittel benutzt.\grqq{}\newline\newline\newline
+\rule{8cm}{0.4pt}\\
+Ort, Datum \qquad\qquad\quad Unterschrift
+
+
+
+
+\end{document}
